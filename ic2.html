@@ -1,42 +1,42 @@
 <html>
-	<head>
-		<title>IC2: Never Forget</title>
-		<script type="text/javascript">
-			function setTimes() {
-				var now = new Date().getTime();
-				var time1 = now - Date.parse("2012-12-19");
-				var time2 = now - Date.parse("2013-08-05");
-				document.getElementById('time1').innerHTML = '<b>' + getDays(time1) + '</b> (' + getYears(time1) + ')';
-				document.getElementById('time2').innerHTML = '<b>' + getDays(time2) + '</b> (' + getYears(time2) + ')';
-			}
-			
-			function getDays(time) {
-				var days = Math.round(time / 86400000);
-				if(days == 1) {
-				    days += ' day';
-				} else {
-					days += ' days';
-				}
-				return days;
-			}
-			
-			function getYears(time) {
-				var years = Math.round(time / 31556952000);
-				if(years == 1) {
-				    years += ' year';
-				} else {
-					years += ' years';
-				}
-				return years;
-			}
-		</script>
-	</head>
-	<body onLoad="setTimes()">
-		<div style="margin-top:80px; text-align:center; font-family:sans-serif">
-			<div style="font-size: 40px">Time since the last official IC2 release:</div><br />
-			<div style="font-size: 72px" id="time1">wat</div><br />
-			<div style="margin-top:50px; font-size: 16px">IC2 has been <i>experimental</i> for: <b id="time2">wat</b></div>
-			<div style="margin-top:500px; font-size: 12px">It will be missed.</div>
-		</div>
-	</body>
+    <head>
+        <title>IC2: Never Forget</title>
+        <script type="text/javascript">
+            function setTimes() {
+                var now = new Date().getTime();
+                var time1 = now - Date.parse("2012-12-19");
+                var time2 = now - Date.parse("2013-08-05");
+                document.getElementById('time1').innerHTML = '<b>' + getDays(time1) + '</b> (' + getYears(time1) + ')';
+                document.getElementById('time2').innerHTML = '<b>' + getDays(time2) + '</b> (' + getYears(time2) + ')';
+            }
+            
+            function getDays(time) {
+                var days = Math.round(time / 86400000);
+                if(days == 1) {
+                    days += ' day';
+                } else {
+                    days += ' days';
+                }
+                return days;
+            }
+            
+            function getYears(time) {
+                var years = (time / 31556952000).toFixed(1);
+                if(years == 1) {
+                    years += ' year';
+                } else {
+                    years += ' years';
+                }
+                return years;
+            }
+        </script>
+    </head>
+    <body onLoad="setTimes()">
+        <div style="margin-top:80px; text-align:center; font-family:sans-serif">
+            <div style="font-size: 40px">Time since the last official IC2 release:</div><br />
+            <div style="font-size: 72px" id="time1">wat</div><br />
+            <div style="margin-top:50px; font-size: 16px">IC2 has been <i>experimental</i> for: <b id="time2">wat</b></div>
+            <div style="margin-top:500px; font-size: 12px">It will be missed.</div>
+        </div>
+    </body>
 </html>
